@@ -1,0 +1,12 @@
+<swiper class="swiper" indicator-dots="true" autoplay="true" interval="5000" duration="1000">  
+      <block wx:for="{{movies}}" wx:for-index="index">  
+        <swiper-item>  
+          <image src="{{item.url}}" class="slide-image" mode="aspectFill"/>  
+        </swiper-item>  
+      </block>  
+    </swiper> 
+<view wx:for="{{goods}}" wx:key="{{unque}}">
+  商品名称{{goods[index].goods_name}}
+  商品价格{{goods[index].shop_price}}
+  商品库存{{goods[index].goods_number}}
+</view>
