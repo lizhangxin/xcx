@@ -1,44 +1,46 @@
-// home/home.js
+// pages/login/login.js
 Page({
+
+  login:function(u)
+{
+  //获取用户信息
+  let userinfo = u.detail.userInfo;
+  wx.login({
+    success (res) {
+      if (res.code) {
+        //发起网络请求
+        wx.request({
+          url: 'http://blog.com/wx/login=' + res.code,
+          method: 'post',
+          header:{'content-type':'application/json'},
+          data: {
+            u: userinfo
+          },
+          success: function(res){
+              //保存token
+              wx.setStorageSync('toekn',res.data.data.token)
+          }
+        })
+      } else {
+        console.log('登录失败！' + res.errMsg)
+      }
+    }
+  })
+},
 
   /**
    * 页面的初始数据
    */
   data: {
-    movies:[  
-      {url:'/素材/素材/1.jpg'} ,  
-      {url:'/素材/素材/2.jpg'} ,  
-      {url:'/素材/素材/3.jpg'} ,  
-      {url:'/素材/素材/4.jpg'}   
-      ]  
-  
-  },
-  goodsDetail:function(e)
-  {
-    //获取被点击的 商品id
-    // console.log(e);
-    let goods_id = e.currentTarget.id;
-    //切换至 详情页
-    wx.redirectTo({
-      url: '/pages/detail/detail?goods_id='+goods_id
-    });
+
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    let tahat=this
-    wx.request({
-      url: 'http://blog.com/wx/goods',
-      success:function(res){
-        console.log(res.data)
-        tahat.setData({
-          goods:res.data
-        })
-      }
-    })
-   },
+
+  },
 
   /**
    * 生命周期函数--监听页面初次渲染完成

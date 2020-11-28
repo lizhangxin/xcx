@@ -1,0 +1,63 @@
+
+<view>
+<swiper bindchange="swipperChange" indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+  <block wx:for="{{imgUrls}}">
+    <swiper-item>
+      <view class="tips">
+          <text>{{ index + 1 }}/{{imgUrls.length}}</text>
+      </view>
+      <image src="{{imghref}}{{goods_id.goods_img}}" data-src="{{item}}" bindtap="previewImage"></image>
+    </swiper-item>
+  </block>
+</swiper>
+</view>
+<scroll-view scroll-y="true">
+  <view class="detail">
+    <text class="title">{{goods_id.goods_name}}</text>
+    <text class="price">价格{{goods_id.goods_price}}
+    </text>
+    <view wx:if="{{iscollect == true}}" class="iconfont icon-shoucang1" bindtap="addFav" data-goods_id="{{goods_id.goods_id}}">
+      <text class="shoucang" >收藏</text>
+    </view>
+    <view wx:else class="iconfont icon-shoucang" bindtap="noFav" data-goods_id="{{goods_id.goods_id}}">
+      <text class="shoucang">取消收藏</text>
+    </view>
+    
+  </view>
+  <view class="separate"></view>
+  <!-- sku选择 -->
+
+  <text>商品评价</text>
+  <text class="text-remark">东西还可以，好评~</text>
+  <view class="separate"></view>
+  <text>商品详情</text>
+  <block wx:for-items="{{detailImg}}" wx:key="name">
+    <image class="image_detail" src="{{imghref}}{{goods_id.goods_img}}" />
+  </block>
+  <view class="temp"></view>
+</scroll-view>
+<!-- 底部悬浮栏 -->
+<view class="bottom-nav">
+        <view class="nav-icon">
+            <view class="iconfont icon-kefu"></view>
+            <view class="photo"> 客服 </view>
+        </view>
+        <view class="nav-icon">
+            <view class="iconfont icon-icon2"></view>
+            <view class="photo"> 收藏 </view>
+        </view>
+        <view class="nav-addcart">加入购物车</view>
+        <view class="nav-buynow">立即购买</view>
+    </view>
+    <view animation="{{animationData}}" class="commodity_attr_box" wx:if="{{showModalStatus}}">在这里写弹出框里面的布局</view>
+
+
+
+
+
+
+
+
+
+
+

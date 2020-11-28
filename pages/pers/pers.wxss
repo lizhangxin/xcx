@@ -1,0 +1,264 @@
+/* pages/pers/pers.wxss */
+page {
+  height: 100%;
+  background: #f4f4f4;
+  font-family: -apple-system-font, Arial, Helvetica, sans-serif;
+  color: #333;
+  font-size: 32rpx;
+  line-height: 1.42857;
+}
+
+.container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+}
+
+.section {
+  display: flex;
+  flex-direction: column;
+  padding-left: 30rpx;
+  padding-right: 30rpx;
+  margin-bottom: 10rpx;
+}
+.cart-list{
+  margin-bottom: 100rpx;
+}
+.cart-shop{
+  width: 100%;
+  height: 100rpx;
+  line-height: 100rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  position: relative;
+  background-color: #fff;
+  padding: 0% 4%;
+}
+.cart-shop .shop-name{
+  height: 100rpx;
+  line-height: 100rpx;
+  color: #292929;
+  font-size: 28rpx;
+  margin-left: 3%;
+}
+.cart-shop icon{
+  margin-top: 6%;
+}
+
+.section-good {
+  /* margin-bottom: 100rpx; */
+  background-color: #fff;
+}
+
+.good {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  position: relative;
+  height: 200rpx;
+}
+
+.good:last-child {
+  border-bottom: none;
+}
+
+.checkbox {
+  width: 48rpx;
+  height: 48rpx;
+}
+
+.cover {
+  width: 150rpx;
+  height: 150rpx;
+  margin-left: 20rpx;
+}
+
+.content {
+  height: 100rpx;
+  flex: 1;
+  margin-left: 20rpx;
+}
+
+.content .text {
+  color: #363636;
+  width: 450rpx;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.content .name {
+  color: #232323;
+  font-size: 26rpx;
+}
+
+.content .author {
+  font-size: 28rpx;
+  color: #363636;
+  margin-top: 10rpx;
+}
+
+.content .desc {
+  color: #363636;
+  font-size: 28rpx;
+  margin-top: 10rpx;
+}
+
+.content .press {
+  font-size: 28rpx;
+  color: #363636;
+  margin-top: 10rpx;
+}
+
+.content .price {
+  font-size: 28rpx;
+  color: #ea0a0a;
+  text-align: left;
+}
+
+.good .stepper {
+  width: 450rpx;
+  display: flex;
+  position: absolute;
+  right: 0;
+  bottom: 20rpx;
+  flex-direction: row;
+  text-align: center;
+}
+
+.stepper .add, .stepper .subtract {
+  width: 60rpx;
+  height: 50rpx;
+  line-height: 50rpx;
+  font-size: 28rpx;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+.stepper .add{
+  border-left: none;
+  border-top-right-radius: 6rpx;
+  border-bottom-right-radius: 6rpx;
+}
+.stepper .subtract{
+  border-right: none;
+  border-top-left-radius: 6rpx;
+  border-bottom-left-radius: 6rpx;
+}
+
+/* .stepper .disabled {
+  color: #eee;
+} */
+
+.stepper .count { 
+  width: 90rpx;
+  height: 50rpx;
+  line-height: 50rpx;
+  border: 1px solid #ccc;
+  text-align: center;
+  box-sizing: border-box;
+  min-height: 1rem;
+  font-size: 28rpx;
+}
+
+.section-bottom {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 100%;
+  height: 100rpx;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  margin-bottom: 0;
+  background-color: #fff;
+  box-sizing: border-box;
+  z-index: 99;
+}
+
+
+.section-bottom .btn-default {
+  width: 180rpx;
+  height: 100rpx;
+  line-height: 100rpx;
+  text-align: center;
+  color: #fff;
+  background-color: #62ab00;
+}
+
+.section-bottom .checkbox-allcheck {
+  display: inline-block;
+  margin-left: 30rpx;
+  vertical-align: top;
+  font-size: 0px;
+}
+
+.section-bottom .check-all-text {
+  display: inline-block;
+  vertical-align: top;
+  margin-left: 10rpx;
+  height: 23px;
+  line-height: 23px;
+  font-size: 28rpx;
+}
+
+.section-bottom .total {
+  flex: 1;
+  text-align: right;
+  font-size: 26rpx;
+}
+
+.total .totalPrice {
+  display: inline-block;
+  font-size: 26rpx;
+  margin-right: 30rpx;
+  vertical-align: middle;
+}
+
+.total .totalCount text {
+  color: #e4452a;
+  vertical-align: middle;
+}
+
+.total .totalPrice text {
+  color: #e4452a;
+  font-size: 36rpx;
+  vertical-align: middle;
+}
+.delete{
+  width: 120rpx;
+  height: 50rpx;
+  line-height: 50rpx;
+  text-align: center;
+  font-size: 28rpx;
+  color: #62ab00;
+  border: 1rpx solid #62ab00;
+  border-radius: 30rpx;
+  margin-left: 55%;
+}
+.no-shop{
+  height: 100rpx;
+  line-height: 100rpx;
+}
+.noshopCart{
+  background-color: #fff;
+  text-align: center;
+}
+.noshopCart .no-shop{
+  padding-top: 45%;
+}
+
+.shopping-btn{
+  border: 1rpx solid #62ab00;
+  box-sizing: border-box;
+  color: #62ab00;
+  font-size: 28rpx;
+  width: 150rpx;
+  height: 60rpx;
+  line-height: 60rpx;
+  border-radius: 30rpx;
+  text-align: center;
+  margin: 0 auto;
+}

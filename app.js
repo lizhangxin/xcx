@@ -33,7 +33,14 @@ App({
       }
     })
   },
+  
+
   globalData: {
-    userInfo: null
+    userInfo: null,
+    // apiUrl:'https://2004yjl.comcto.com',
+    apiUrl:'http://blog.com',
+  
   }
+
+  
 })

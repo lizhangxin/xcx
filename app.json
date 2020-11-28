@@ -3,7 +3,14 @@
     "pages/index/index",
     "pages/logs/logs",
     "goods/goods",
-    "home/home"
+    "home/home",
+    "pages/detail/detail",
+    "pages/login/login",
+    "pages/pers/pers",
+    "pages/order/order",
+    "pages/cart/cart"
+   
+
 
   ],
   "window": {
@@ -24,23 +31,24 @@
         "text": "首页"
       },
       {
+        "iconPath": "/素材/素材/my.png",
+        "selectedIconPath": "/素材/素材/my-select.png",
+        "pagePath": "pages/index/index",
+        "text": "个人中心"
+      },
+      {
         "iconPath": "/素材/素材/shopcart.png",
         "selectedIconPath": "/素材/素材/shopcart-select.png",
-        "pagePath": "pages/index/index",
+        "pagePath": "pages/cart/cart",
         "text": "购物车"
       },
       {
         "iconPath": "/素材/素材/order.png",
         "selectedIconPath": "/素材/素材/order-select.png",
-        "pagePath": "pages/index/index",
+        "pagePath": "pages/order/order",
         "text": "订单"
-      },
-      {
-        "iconPath": "/素材/素材/my.png",
-        "selectedIconPath": "/素材/素材/my-select.png",
-        "pagePath": "pages/index/index",
-        "text": "个人中心"
       }
+      
     ]
   },
   "networkTimeout": {

@@ -17,5 +17,5 @@
 
 
  <view>
-   <button type="primary" bindtap="btnLogin">登录</button>
+  <button open-type="getUserInfo" bindgetuserinfo="login">登录</button>
  </view>

@@ -1,0 +1,55 @@
+<!--pages/cart/cart.wxml-->
+<view class="page-box">
+<!-- 开始头部 -->
+<view class="cart-top">
+    <view class="left">共X件商品</view>
+    <view class="right">删除</view>
+</view>
+<!-- 头部结束 -->
+
+
+<!-- 列表开始 -->
+<view class="item-list">
+  <view class="item" wx:for="{{goodsList}}" wx:key="*this">
+    <checkbox-group>
+      <checkbox value="1" checked="{{item.checked}}"> </checkbox>
+    </checkbox-group>
+    <view class="pic">
+      <image src=""></image>
+    </view>
+    <view class="content">
+      <view class="title">{{item.goods_name}}</view>
+      <view class="desc">品牌</view>
+      <view class="price-info">
+          <view class="price">${{item.cart_price}}</view>
+          <view class="number">
+            <view class="decr">-</view>
+            <input value="{{item.goods_num}}"></input>
+            <view class="incr">+</view>
+          </view>
+      </view>
+    </view>
+  </view>
+</view>
+<!-- 列表结束 -->
+
+
+<!-- 底部开始 -->
+<view class="total-box">
+  <view class="all">
+    <checkbox-group bindchange="selectAll">
+      <checkbox value="1" checked="{{isSelectAll}}"/>
+        <text>全选</text>
+    </checkbox-group>
+  </view>
+  <view class="total-price">
+    总价:
+    <text class="price">${{totalAmount}}</text>
+  </view>
+  <view class="btn btn-default">去结算</view>
+</view>
+
+<!-- 底部结束 -->
+
+
+</view>

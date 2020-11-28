@@ -5,8 +5,29 @@
         </swiper-item>  
       </block>  
     </swiper> 
-<view wx:for="{{goods}}" wx:key="{{unque}}">
-  商品名称{{goods[index].goods_name}}
-  商品价格{{goods[index].shop_price}}
-  商品库存{{goods[index].goods_number}}
+    <!-- //导航栏 -->
+    <view class='classify_list'>
+     <view class="classify">数码</view>
+     <view class="classify">男装</view>
+     <view class="classify">女装</view>
+     <view class="classify">电器</view>
+     <view class="classify">化妆品</view>
+   </view>
+   <!-- 渲染商品 -->
+<view class='list'>
+  <block wx:for='{{goods}}' wx:key='unque' wx:for-item="item">
+  <view class="list_item">
+      <navigator url='details?id={{item.goods_id}}'>
+      <view class='img'>
+        <image src="{{imghref}}{{item.goods_img}}"  mode="scaleToFill"/>
+      </view>
+      <view class='info' id="{{goods[index].goods_id}}" bindtap="goodsDetail">
+        <view class='name'>{{item.goods_name}}</view>
+        <view class='price'>￥{{item.goods_price}}</view>
+        <view class='num'>销量{{item.goods_num}}</view>
+      </view>
+       </navigator>
+      <view class='clear'></view>
+  </view>
+  </block>
 </view>
