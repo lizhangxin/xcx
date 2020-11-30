@@ -1,11 +1,16 @@
 // pages/cart/cart.js
+const app = getApp()
+const apihost = app.globalData.apiUrl
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    selectAll: false,
+    goodsList:[],
+    totalprice:0,
+    selectone:false,
   },
 
   /**
@@ -26,7 +31,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    this.getCartList()
   },
 
   /**
@@ -62,5 +67,25 @@ Page({
    */
   onShareAppMessage: function () {
 
+  },
+  /**
+   * 购物车商品列表
+   */
+  getCartList: function(){
+    let _this= this;
+    let token =wx.getStorageSync('token')
+    wx.request({
+      url: apihost + '/wx/cartlist?token='+token,
+      success: function(d){
+        if(d.data.error==0){
+          _this.setData({
+            goodsList:d.data.data.list
+          })
+
+        }else{
+          console.log("接口请求失败");
+        }
+      }
+    })
   }
 })

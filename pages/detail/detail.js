@@ -181,5 +181,36 @@ Page({
         })
       }
     })
-  }
+  },
+
+  // 加入购物车
+  addcart:function(e){
+        // console.log(e)
+        let goods_id=e.currentTarget.id
+        // console.log(goods_id);
+        let access_token=wx.getStorageSync('token')
+        // console.log(access_token)
+      // const app=getApp()
+      // const apihost=app.globalData.apiUrl;
+    wx.request({
+      url: apihost+'/wx/cart?goods_id='+goods_id,
+      data:{
+        goods_id:goods_id,
+        token:access_token
+      },
+      success:function(res){
+        wx.showToast({           
+          title: '加入购物车成功！',           
+          icon: 'success',           
+          duration: 2000
+        }) 
+      }
+    })
+  },
+    /**购物车跳转*/
+    gouwuche:function(){
+      wx.switchTab({
+        url: '../cart/cart',
+      })
+    }
 })

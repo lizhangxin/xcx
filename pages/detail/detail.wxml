@@ -42,11 +42,11 @@
             <view class="iconfont icon-kefu"></view>
             <view class="photo"> 客服 </view>
         </view>
-        <view class="nav-icon">
+        <view class="nav-icon" bindtap="gouwuche">
             <view class="iconfont icon-icon2"></view>
-            <view class="photo"> 收藏 </view>
+            <view class="photo"> 购物车 </view>
         </view>
-        <view class="nav-addcart">加入购物车</view>
+        <view class="nav-addcart" bindtap="addcart" id="{{goods.goods_id}}">加入购物车</view>
         <view class="nav-buynow">立即购买</view>
     </view>
     <view animation="{{animationData}}" class="commodity_attr_box" wx:if="{{showModalStatus}}">在这里写弹出框里面的布局</view>

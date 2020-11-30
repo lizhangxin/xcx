@@ -148,7 +148,8 @@ text {
 
 }
 .photo{
-  font-size: 9px;
+  font-size: 13px;
+
 }
 /* 收藏 */
 @font-face {font-family: "iconfont";
